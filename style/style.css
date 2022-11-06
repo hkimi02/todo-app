@@ -1,0 +1,25 @@
+.avatar {
+    border-radius: 50%;
+}
+
+.information {
+    display: flex;
+    justify-content: space-between;
+}
+
+.information img {
+    margin-left: 5%;
+    margin-top: 6%;
+}
+
+.sign-up-user-form {
+    width: 40rem;
+    margin-top: -4%;
+}
+
+.logo {
+    height: 40rem;
+    width: 30rem;
+    margin-left: 15%;
+    margin-top: -10%;
+}
