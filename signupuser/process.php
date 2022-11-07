@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
                             'password'=>$password,
                             'file'=>$avatar
         ]);
-        header("location:process.php?msg=user saved you may now log in&type=success");  
+        header("location:../loginUser/process.php?msg=user saved you may now log in&class=success");  
     }
 }
 show:

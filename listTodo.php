@@ -1,3 +1,10 @@
+<?php session_start(); ?>
+<?php
+ if(!isset($_SESSION['name'])){
+    header('location:loginUser/process.php?msg=you have to log in to access your account&class=danger');
+ }
+else{
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +17,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./style/style.css">
   </head>
-  <?php session_start(); ?>
+ 
 <body>
     <div class="container">
     <nav class="navbar navbar-expand-lg bg-light  mb-5">
@@ -63,8 +70,6 @@ add
 <?php 
 require_once "./db_connect.php";
 if(array_key_exists('search',$_GET)){
-  //if(isset($_GET['search'])){
-   //$id_searched=$_GET["id_searched"];
     extract($_GET);
      $search_title='%'.$search.'%';
      $query=$db->prepare('SELECT * FROM todos where title like :search AND id_user=:id_user');
@@ -144,3 +149,4 @@ $todos=$query->fetchAll();
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php } ?>

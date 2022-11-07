@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
         exit;
     }
     $res=$req->fetch();
-    if(!$password==$res['password']){
+    if($password!=$res['password']){
         header("location:process.php?msg=verify your password&class=danger");
         exit;
     }else{

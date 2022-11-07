@@ -35,7 +35,6 @@ login
         </div>
 </div>
 </nav>
-    <h1 class="text-center">sign up user</h1>
     <?php if(array_key_exists('msg',$_GET)): ?>
             <div class="alert alert-<?=$_GET['type']?>">
                 <?= $_GET['msg']; ?>
@@ -44,6 +43,7 @@ login
     <div class="row">
     <div class="sign-up-user-form">
 <form class="shadow-lg p-5 rounded col"  method="POST" action="./process.php" enctype="multipart/form-data">
+<h1 class="text-center">sign up user</h1>
 <div class="mb-3">
     <label for="username" class="form-label"> <i class="bi bi-person-circle"></i></label>
     <input type="text" class="form-control" id="username" name="username" placeholder="username">
@@ -68,7 +68,7 @@ login
 </form>
     </div>
 <div class="col">
-<img src="../storage/sign_up.png" class="logo">
+<img src="../storage/sign_up.png" class="img-thumbnail logo">
 </div>
 </div>
 </div>
