@@ -1,10 +1,10 @@
 <?php session_start(); ?>
 <?php
- if(!isset($_SESSION['name'])){
+if(!isset($_SESSION['name'])){
     header('location:loginUser/process.php?msg=you have to log in to access your account&class=danger');
- }
+}
 else{
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +17,6 @@ else{
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./style/style.css">
   </head>
- 
 <body>
     <div class="container">
     <nav class="navbar navbar-expand-lg bg-light  mb-5">
@@ -46,8 +45,14 @@ add
 </ul>     <div class="d-flex information">
           <p class="text-center">welcome <strong><?= $_SESSION['name'] ?></strong></p>
           <img class="avatar" src="<?= $_SESSION['avatar']; ?>" height="40px" width="40px"> 
-          </div>
-        </div>
+          <div class="dropdown-center">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span class="material-symbols-outlined">settings</span></button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./EditUser.php?id_edit=<?=$_SESSION['id']?>"><span class="material-symbols-outlined text-warning">edit</span><span class="text-warning">edit Info</span></a></li>
+    <li><a class="dropdown-item" href="./processUser.php?id_delete=<?=$_SESSION['id']?>" onclick="return confirm('you sure you want to delete your account you would have no access to our services and it cant be restrained')"><span class="material-symbols-outlined text-danger text-center">delete</span><span class="text-danger">Delete Account</span></a></li>
+  </ul>
+</div>
+      </div>
 </div>
 </nav>
         <h1 class="text-center">todo list</h1>

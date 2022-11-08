@@ -15,8 +15,7 @@ if(isset($_POST['completed'])){
         'id' =>$id,
         'complete'=>!$todo_check['complete'],
     ]);
-   header('location:../listTodo.php');
-   
+    header('location:../listTodo.php');
 }
 
 
