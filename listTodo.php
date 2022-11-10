@@ -49,7 +49,10 @@ add
               <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span class="material-symbols-outlined">settings</span></button>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="./EditUser.php?id_edit=<?=$_SESSION['id']?>"><span class="material-symbols-outlined text-warning">edit</span><span class="text-warning">edit Info</span></a></li>
-    <li><a class="dropdown-item" href="./processUser.php?id_delete=<?=$_SESSION['id']?>" onclick="return confirm('you sure you want to delete your account you would have no access to our services and it cant be restrained')"><span class="material-symbols-outlined text-danger text-center">delete</span><span class="text-danger">Delete Account</span></a></li>
+    <li><a class="dropdown-item" href="./processUser.php?id_delete=<?=$_SESSION['id']?>" onclick="return
+    confirm('you sure you want to delete your account you would have no access to our services and it cant be restrained')"><span class="material-symbols-outlined text-danger text-center">delete</span><span class="text-danger">Delete Account</span></a>
+    </li>
+
   </ul>
 </div>
       </div>

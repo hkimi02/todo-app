@@ -38,26 +38,8 @@ if(isset($_POST['edit'])){
             'avatar'=>$avatar,
             'id'=>$id
     ]);
-    unset($_SESSION['name']);
-    unset($_SESSION['avatar']);
     $_SESSION['name']=$username;
     $_SESSION['avatar']=$avatar;
     header("location:listTodo.php");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
