@@ -51,7 +51,7 @@ add
 </nav>
     <div class="row">
     <div class="sign-up-user-form">
-<form class="shadow-lg p-5 rounded col"  method="POST" action="./processUser.php" enctype="multipart/form-data">
+<form class="shadow-lg p-5 rounded col"  method="POST" action="./processUser.php">
 <h1 class="text-center">edit user</h1>
 <?php if(array_key_exists('msg',$_GET)): ?>
             <div class="alert alert-<?=$_GET['type']?>">
@@ -71,16 +71,18 @@ add
     <label for="password" class="form-label"> <i class="bi bi-lock-fill"></i></label>
     <input type="text" class="form-control" id="password" name="password" value="<?= $res['password']; ?>">
 </div>
-<div class="mb-3">
-    <label for="avatar" class="form-label"><i class="bi bi-camera-fill"></i>
-    :<img src="<?= $res['avatar'];?>" height="30px" width="30px"> your current profile photo</label>
-    <input type="file" class="form-control" id="avatar" name="avatar">
-</div>
     <button type="submit" class="btn btn-primary" name="edit">update</button>
 </form>
     </div>
 <div class="col">
-<img src="./storage/sign_up.png" class="img-thumbnail logo">
+    <img src="<?= $res['avatar'];?>" class="img-thumbnail logo change-pic">
+    <form action="./processUser.php" method="POST"  enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="avatar" class="form-label"><i></i> : your current profile photo</label>
+            <input type="file" class="form-control" id="avatar" name="avatar">
+        </div>
+        <button type="submit" class="btn btn-primary" name="change">change</button>
+    </form>
 </div>
 </div>
 </div>

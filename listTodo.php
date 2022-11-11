@@ -49,13 +49,12 @@ add
               <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span class="material-symbols-outlined">settings</span></button>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="./EditUser.php?id_edit=<?=$_SESSION['id']?>"><span class="material-symbols-outlined text-warning">edit</span><span class="text-warning">edit Info</span></a></li>
-    <li><a class="dropdown-item" href="./processUser.php?id_delete=<?=$_SESSION['id']?>" onclick="return
-    confirm('you sure you want to delete your account you would have no access to our services and it cant be restrained')"><span class="material-symbols-outlined text-danger text-center">delete</span><span class="text-danger">Delete Account</span></a>
+    <li><a class="dropdown-item" href="./processUser.php?id_delete=<?=$_SESSION['id']?>"
+    onclick="return confirm('you sure you want to delete your account you would have no access to our services and it cant be restrained')"><span class="material-symbols-outlined text-danger text-center">delete</span><span class="text-danger">Delete Account</span></a>
     </li>
-
   </ul>
 </div>
-      </div>
+    </div>
 </div>
 </nav>
         <h1 class="text-center">todo list</h1>
@@ -79,15 +78,15 @@ add
 require_once "./db_connect.php";
 if(array_key_exists('search',$_GET)){
     extract($_GET);
-     $search_title='%'.$search.'%';
+      $search_title='%'.$search.'%';
      $query=$db->prepare('SELECT * FROM todos where title like :search AND id_user=:id_user');
-     $query->execute(['search'=>$search_title,
+      $query->execute(['search'=>$search_title,
                       'id_user'=>$_SESSION['id'],
     ]);
-     $todos=$query->fetchAll();
-     if(!$todos){
+      $todos=$query->fetchAll();
+      if(!$todos){
         $todos='vide';
-     }
+      }
 }else{
 $query=$db->prepare('SELECT * FROM todos where id_user=:id_user');
 $query->execute(['id_user'=>$_SESSION['id']]);
