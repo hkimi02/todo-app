@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
             $req=$db->prepare("INSERT INTO users (username,email,password,avatar) VALUES(:username,:email,:password,:file)");
             $req->execute(['username'=>$username,
                             'email'=>$email,
-                            'password'=>$password,
+                            'password'=>md5($password),
                             'file'=>$avatar
         ]);
         header("location:../loginUser/process.php?msg=user saved you may now log in&class=success");  

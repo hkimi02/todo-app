@@ -69,7 +69,7 @@ add
 </div>
 <div class="mb-3">
     <label for="password" class="form-label"> <i class="bi bi-lock-fill"></i></label>
-    <input type="text" class="form-control" id="password" name="password" value="<?= $res['password']; ?>">
+    <input type="text" class="form-control" id="password" name="password">
 </div>
     <button type="submit" class="btn btn-primary" name="edit">update</button>
 </form>

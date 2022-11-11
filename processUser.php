@@ -5,20 +5,28 @@ if(array_key_exists('id_delete',$_GET)){
     $req=$db->prepare("DELETE from users where id=:id");
     $req->execute(['id'=>$_GET['id']]);
     session_start();
-    session_destroy();
     unset($_SESSION['name']);
+    session_destroy();
     header("location:./loginUser/process.php?msg=your account has been deleted&class=danger");
 }
 
 if(isset($_POST['edit'])){
     extract($_POST);
-        $req=$db->prepare("UPDATE users SET username=:username,email=:email,password=:password WHERE id=:id");
+    if($password==''){
+        $req=$db->prepare("UPDATE users SET username=:username,email=:email WHERE id=:id");
+        $req->execute(
+            ['username'=>$username,
+            'email'=>$email,
+            'id'=>$id
+        ]);
+    }
+       else{ $req=$db->prepare("UPDATE users SET username=:username,email=:email,password=:password WHERE id=:id");
         $req->execute(
             ['username'=>$username,
             'email'=>$email,
             'password'=>$password,
             'id'=>$id
-    ]);
+    ]);}
     $_SESSION['name']=$username;
     header("location:listTodo.php");
     exit;
