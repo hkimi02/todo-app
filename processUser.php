@@ -19,8 +19,7 @@ if(isset($_POST['edit'])){
             'email'=>$email,
             'id'=>$id
         ]);
-    }
-       else{ $req=$db->prepare("UPDATE users SET username=:username,email=:email,password=:password WHERE id=:id");
+    }else{ $req=$db->prepare("UPDATE users SET username=:username,email=:email,password=:password WHERE id=:id");
         $req->execute(
             ['username'=>$username,
             'email'=>$email,
