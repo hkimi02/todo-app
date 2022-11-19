@@ -23,7 +23,7 @@ if(isset($_POST['edit'])){
         $req->execute(
             ['username'=>$username,
             'email'=>$email,
-            'password'=>$password,
+            'password'=>$password,  
             'id'=>$id
     ]);}
     $_SESSION['name']=$username;

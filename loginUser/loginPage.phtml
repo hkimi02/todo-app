@@ -41,8 +41,8 @@ person_add
         <form class="shadow-lg p-3 mb-5 bg-light rounded" action="./process.php" method="POST">
             <h1 class="text-center">login user</h1>
             <?php if(array_key_exists('msg',$_GET)) :  ?>
-                <div class="alert alert-<?= $_GET['class'];?>">
-                <?= $_GET['msg']; ?>
+                <div class="alert alert-<?= $_GET['class']; ?>">
+                <?php echo $_GET['msg']; ?>
                 </div>
             <?php endif; ?>
             <div class="mb-3">
